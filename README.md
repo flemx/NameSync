@@ -19,7 +19,7 @@ sfdx force:auth:web:login -a "OrgAlias"
 sfdx force:source:deploy --sourcepath force-app/main/default --json --loglevel fatal --targetusername "OrgAlias"
 ```
 
-4. Assign the permission setg:
+4. Assign the permission set:
 
 ```
 sfdx force:user:permset:assign --permsetname NameSync --targetusername "OrgAlias"
