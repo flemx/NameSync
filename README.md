@@ -1,6 +1,6 @@
 # NameSync
 
-This package installs 2 objects (Master__c and Detail__c) with a Master and Detail relationship 
+This package installs 2 objects (Master__c and Detail__c) with a MasterDetail relationship.
 Apex logix ensures the Master Name always contains a comma seperated composition of its underlying Detail Name values
 
 The goal of this project is to showcase best practice for Object Oriented Programming and Design Patterns for Triggers.
