@@ -1,18 +1,35 @@
-# Salesforce DX Project: Next Steps
+# NameSync
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This package installs 2 objects (Master__c and Detail__c) with a Master and Detail relationship 
+Apex logix ensures the Master Name always contains a comma seperated composition of its underlying Detail Name values
 
-## How Do You Plan to Deploy Your Changes?
+The goal of this project is to showcase best practice for Object Oriented Programming and Design Patterns for Triggers.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+### Install
 
-## Configure Your Salesforce DX Project
+1. Authorize with your org and provide it with an alias (OrgAlias):
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+```
+sfdx force:auth:web:login -a "OrgAlias"
+```
 
-## Read All About It
+3. Push the app to your org:
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+```
+sfdx force:source:deploy --sourcepath force-app/main/default --json --loglevel fatal --targetusername "OrgAlias"
+```
+
+4. Assign the permission setg:
+
+```
+sfdx force:user:permset:assign --permsetname NameSync --targetusername "OrgAlias"
+```
+
+4. Open the default org:
+
+```
+sfdx force:org:open --targetusername "OrgAlias"
+```
+
+
+
