@@ -1,12 +1,12 @@
 
 /*******************************************************************************************
-* @Name         DetailTriggetHandlerTest 
+* @Name         DetailTriggerHandlerTest 
 * @Author       Damien Fleminks
 * @Date         14-04-2021
-* @Description  Test the trigger events Handled by the DetailTriggetHandler
+* @Description  Test the trigger events Handled by the DetailTrigger, coverages classes:  DetailTriggetHandler & MasterService 
 *******************************************************************************************/
 @isTest
-private class DetailTriggetHandlerTest {
+private class DetailTriggerHandlerTest {
 
     @testSetup static void setup() {
         insert TestDataFactory.createMasters(1);      

@@ -25,7 +25,13 @@ sfdx force:source:deploy --sourcepath force-app/main/default --json --loglevel f
 sfdx force:user:permset:assign --permsetname NameSync --targetusername "OrgAlias"
 ```
 
-4. Open the default org:
+4. Run unit tests:
+
+```
+>sfdx force:apex:test:run --classnames "DetailTriggerHandlerTest" --resultformat tap --codecoverage  --targetusername "OrgAlias"
+```
+
+5. Open the default org:
 
 ```
 sfdx force:org:open --targetusername "OrgAlias"

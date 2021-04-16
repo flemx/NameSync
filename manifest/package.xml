@@ -3,7 +3,7 @@
   <types>
     <name>ApexClass</name>
     <members>DetailTriggerHandler</members>
-    <members>DetailTriggetHandlerTest</members>
+    <members>DetailTriggerHandlerTest</members>
     <members>MasterService</members>
     <members>TestDataFactory</members>
     <members>TriggerHandler</members>
