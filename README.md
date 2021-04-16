@@ -16,7 +16,7 @@ sfdx force:auth:web:login -a "OrgAlias"
 3. Push the app to your org:
 
 ```
-sfdx force:source:deploy --sourcepath force-app/main/default --json --loglevel fatal --targetusername "OrgAlias"
+sfdx force:source:deploy --sourcepath force-app/main/default -l RunSpecifiedTests -r DetailTriggerHandlerTest --json --loglevel fatal --targetusername "OrgAlias"
 ```
 
 4. Assign the permission set:
@@ -25,17 +25,15 @@ sfdx force:source:deploy --sourcepath force-app/main/default --json --loglevel f
 sfdx force:user:permset:assign --permsetname NameSync --targetusername "OrgAlias"
 ```
 
-4. Run unit tests:
-
-```
->sfdx force:apex:test:run --classnames "DetailTriggerHandlerTest" --resultformat tap --codecoverage  --targetusername "OrgAlias"
-```
-
 5. Open the default org:
 
 ```
 sfdx force:org:open --targetusername "OrgAlias"
 ```
 
+6. To run the unit tests:
 
+```
+sfdx force:apex:test:run --classnames "DetailTriggerHandlerTest" --resultformat tap --codecoverage  --targetusername "OrgAlias"
+```
 
